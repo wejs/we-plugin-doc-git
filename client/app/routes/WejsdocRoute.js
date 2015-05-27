@@ -28,9 +28,6 @@ App.WejsdocRoute = Ember.Route.extend(App.ResetScrollMixin, {
 });
 
 App.WejsdocDpageRoute = Ember.Route.extend(App.ResetScrollMixin, {
-  renderTemplate: function() {
-    this.render('wejsdoc.index');
-  },
   model: function (params) {
     var url = '/docs/'+ params.project;
     if (params.page) {

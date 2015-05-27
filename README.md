@@ -1,11 +1,11 @@
-# We.js messenger plugin
+# We.js documentation plugin viewer
 
 [![Dependency Status](https://david-dm.org/wejs/we-plugin-doc-git.png)](https://david-dm.org/wejs/we-plugin-doc-git)
 [![Build Status](https://travis-ci.org/wejs/we-plugin-doc-git.svg?branch=0.3.x)](https://travis-ci.org/wejs/we-plugin-doc-git)
 
 ## Has suport to:
 
- - Load and show docs fom git projects
+ - Load and show markdown docs fom git projects
 
 ### How to test
 

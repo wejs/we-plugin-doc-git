@@ -7,6 +7,7 @@ var we;
 
 before(function(callback) {
   this.slow(100);
+  this.timeout(30000);
 
   testTools.copyLocalConfigIfNotExitst(projectPath, function() {
     we = require('we-core');
@@ -48,6 +49,7 @@ after(function (callback) {
     projectPath + '/files/public/project.css',
     projectPath + '/files/public/project.js',
     projectPath + '/config/local.js',
+    // projectPath + '/files/wejsdoc'
   ];
 
   async.each(tempFolders, function(folder, next){

@@ -1,7 +1,7 @@
 /**
  * We.js we-plugin-doc-git plugin settings
  */
-var mkdirp = require('mkdirp');
+
 var wejsdoc = require('./lib');
 
 module.exports = function loadPlugin(projectPath, Plugin) {
@@ -10,6 +10,8 @@ module.exports = function loadPlugin(projectPath, Plugin) {
   // set plugin configs
   plugin.setConfigs({
     doc: {
+      cloneInBootstrap: true,
+      pullInBootstrap: true,
       folder: projectPath + '/files/wejsdoc',
       projects: [] // set project names in you local.js settings
     }
@@ -31,18 +33,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
   });
 
   plugin.hooks.on('we:create:default:folders', function(we, done) {
-    // create image upload path
-    mkdirp (we.config.doc.folder, function (err) {
-      if (err) we.log.error('Error on create project docs file', err);
-      done();
-    });
-  });
-
-  plugin.events.on('we:bootstrap:done', function(we) {
-    we.doc = wejsdoc;
-    we.config.doc.projects.forEach(function (project) {
-      wejsdoc.loadProjectDocs(we, project);
-    });
+    wejsdoc.initialize(we, done);
   });
 
   return plugin;

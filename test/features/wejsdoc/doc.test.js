@@ -18,9 +18,9 @@ describe('wejsdocsFeature', function() {
   });
 
   describe('htmlRequest', function() {
-    it ('get /docs/we-core should show we-core doc index.md file', function(done) {
+    it ('get /docs/we should show we doc index.md file', function(done) {
       request(http)
-      .get('/docs/we-core')
+      .get('/docs/we')
       .expect(200)
       .end(function (err, res) {
         if (err) throw err;
@@ -29,9 +29,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we-core/features should return features page', function(done) {
+    it ('get /docs/we/features should return features page', function(done) {
       request(http)
-      .get('/docs/we-core/features')
+      .get('/docs/we/features')
       .expect(200)
       .end(function (err, res) {
         if (err) throw err;
@@ -40,9 +40,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we-core/features.routes should return the feature route doc', function(done) {
+    it ('get /docs/we/features.routes should return the feature route doc', function(done) {
       request(http)
-      .get('/docs/we-core/features.routes')
+      .get('/docs/we/features.routes')
       .expect(200)
       .end(function (err, res) {
         if (err) throw err;
@@ -51,9 +51,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we-core/invalid.pageasdasda should return 404', function(done) {
+    it ('get /docs/we/invalid.pageasdasda should return 404', function(done) {
       request(http)
-      .get('/docs/we-core/invalid.pageasdasda')
+      .get('/docs/we/invalid.pageasdasda')
       .expect(404)
       .end(function (err) {
         if (err) throw err;
@@ -63,9 +63,9 @@ describe('wejsdocsFeature', function() {
   });
 
   describe('jsonRequest', function() {
-    it ('get /docs/we-core should show we-core doc index.md file', function(done) {
+    it ('get /docs/we should show we doc index.md file', function(done) {
       request(http)
-      .get('/docs/we-core')
+      .get('/docs/we')
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (err, res) {
@@ -76,9 +76,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we-core/features should return features page', function(done) {
+    it ('get /docs/we/features should return features page', function(done) {
       request(http)
-      .get('/docs/we-core/features')
+      .get('/docs/we/features')
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (err, res) {
@@ -89,9 +89,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we-core/features.routes should return the feature route doc', function(done) {
+    it ('get /docs/we/features.routes should return the feature route doc', function(done) {
       request(http)
-      .get('/docs/we-core/features.routes')
+      .get('/docs/we/features.routes')
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (err, res) {

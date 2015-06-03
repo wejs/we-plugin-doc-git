@@ -18,6 +18,13 @@ module.exports = function loadPlugin(projectPath, Plugin) {
   });
   // ser plugin routes
   plugin.setRoutes({
+    'get /api/v1/docs/:project/menu': {
+      name          : 'wejsdoc.getDocMenu',
+      controller    : 'wejsdoc',
+      action        : 'getDocMenu',
+      permission    : true,
+      responseType  : 'json'
+    },
     'get /docs/:project': {
       name          : 'wejsdoc.findOne',
       controller    : 'wejsdoc',
@@ -25,7 +32,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
       permission    : true
     },
     'get /docs/:project/:page': {
-      name          : 'wejsdoc.findOne',
+      name          : 'wejsdoc.findOnePage',
       controller    : 'wejsdoc',
       action        : 'findOne',
       permission    : true

@@ -101,5 +101,18 @@ describe('wejsdocsFeature', function() {
         done();
       });
     });
+
+    it ('get /docs/we/menu should return documentation menu', function(done) {
+      request(http)
+      .get('/api/v1/docs/we/menu')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        assert(res.text);
+        assert(res.body.menu);
+        done();
+      });
+    });
   });
 });

@@ -1,7 +1,7 @@
 {
   "name": "we-plugin-doc-git",
   "description": "We.js plugin to show documentation with markdown and git",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "lib/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",

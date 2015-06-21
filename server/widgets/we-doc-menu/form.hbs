@@ -1,0 +1,30 @@
+<form name="widget-form-{{type}}">
+  <div class="form-group">
+    <label for="widget-form-{{type}}-title">{{t 'title'}}</label>
+    <input name="title" value="{{title}}" type="text" class="form-control" id="widget-form-{{type}}-title" placeholder="{{t 'widget.title'}}">
+  </div>
+
+  <div class="form-group">
+    <label for="widget-form-{{type}}-menu">{{t 'Projects'}}</label>
+    <select name="projectName" id="widget-form-{{type}}-projectName" class="form-control">
+      {{#each projects}}
+        {{#ifCond ../configuration.projectName name}}
+          <option value="{{name}}" selected="selected">{{name}}</option>
+        {{else}}
+          <option value="{{name}}">{{name}}</option>
+        {{/ifCond}}
+      {{/each}}
+    </select>
+  </div>
+
+  {{{controllFields}}}
+
+  {{#if id}}
+    <input type="hidden" name="id" value="{{id}}">
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">Cancel</button>
+  {{else}}
+    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">Cancel</button>
+  {{/if}}
+</form>

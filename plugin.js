@@ -39,6 +39,14 @@ module.exports = function loadPlugin(projectPath, Plugin) {
     }
   });
 
+  plugin.setTemplates({
+    'wejsdoc/findOne': __dirname + '/server/templates/wejsdoc/findOne.hbs'
+  });
+
+  plugin.setWidgets({
+    'we-doc-menu': __dirname + '/server/widgets/we-doc-menu'
+  });
+
   plugin.hooks.on('we:create:default:folders', function(we, done) {
     wejsdoc.initialize(we, done);
   });

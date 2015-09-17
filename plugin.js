@@ -23,18 +23,21 @@ module.exports = function loadPlugin(projectPath, Plugin) {
       controller    : 'wejsdoc',
       action        : 'getDocMenu',
       permission    : true,
+      widgetContext: 'wejsdoc',
       responseType  : 'json'
     },
     'get /docs/:project': {
       name          : 'wejsdoc.findOne',
       controller    : 'wejsdoc',
       action        : 'findOne',
+      widgetContext: 'wejsdoc',
       permission    : true
     },
     'get /docs/:project/:page': {
       name          : 'wejsdoc.findOnePage',
       controller    : 'wejsdoc',
       action        : 'findOne',
+      widgetContext: 'wejsdoc',
       permission    : true
     }
   });

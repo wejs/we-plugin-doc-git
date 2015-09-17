@@ -20,7 +20,12 @@ module.exports = function weDocMenuWidget(projectPath, Widget) {
 
   widget.viewMiddleware = function viewMiddleware(widget, req, res, next) {
     var we = req.getWe();
-    if (widget.configuration && widget.configuration.projectName) {
+
+    if (
+      widget.configuration &&
+      widget.configuration.projectName &&
+      we.doc.projects[widget.configuration.projectName]
+    ) {
       widget.menu = we.doc.projects[widget.configuration.projectName].JSONmenu;
     }
 

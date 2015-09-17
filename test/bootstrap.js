@@ -21,7 +21,7 @@ before(function(callback) {
       doc: {
         projects: [{
           name: 'we',
-          gitRemote: 'https://github.com/wejs/we.git'
+          gitRemote: 'https://github.com/wejs/docs.git'
         }]
       }
     } , function(err, we) {

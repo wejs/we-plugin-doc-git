@@ -23,6 +23,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
       controller    : 'wejsdoc',
       action        : 'getDocMenu',
       permission    : true,
+      layoutName    : 'wejsdoc',
       widgetContext: 'wejsdoc',
       responseType  : 'json'
     },
@@ -30,6 +31,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
       name          : 'wejsdoc.findOne',
       controller    : 'wejsdoc',
       action        : 'findOne',
+      layoutName    : 'wejsdoc',
       widgetContext: 'wejsdoc',
       permission    : true
     },
@@ -37,6 +39,7 @@ module.exports = function loadPlugin(projectPath, Plugin) {
       name          : 'wejsdoc.findOnePage',
       controller    : 'wejsdoc',
       action        : 'findOne',
+      layoutName    : 'wejsdoc',
       widgetContext: 'wejsdoc',
       permission    : true
     }

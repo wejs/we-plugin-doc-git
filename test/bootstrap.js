@@ -2,7 +2,6 @@ var projectPath = process.cwd();
 var deleteDir = require('rimraf');
 var testTools = require('we-test-tools');
 var path = require('path');
-var async = require('async');
 var we;
 
 before(function(callback) {
@@ -47,16 +46,14 @@ after(function (callback) {
     projectPath + '/files/public/tpls.hbs.js',
     projectPath + '/files/public/admin.tpls.hbs.js',
     projectPath + '/files/public/project.css',
-    projectPath + '/files/public/project.js',
-    projectPath + '/config/local.js',
+    projectPath + '/files/public/project.js'
     // projectPath + '/files/wejsdoc'
   ];
 
-  async.each(tempFolders, function(folder, next){
+  we.utils.async.each(tempFolders, function(folder, next){
     deleteDir( folder, next);
   }, function(err) {
     if (err) throw new Error(err);
     callback();
-  })
-
+  });
 });

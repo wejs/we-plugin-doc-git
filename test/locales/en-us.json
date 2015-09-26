@@ -1,1 +1,15 @@
-{}
+{
+	"widget.delete.confirm.msg": "widget.delete.confirm.msg",
+	"widget.sort": "widget.sort",
+	"widget.update": "widget.update",
+	"widget.add": "widget.add",
+	"layout.select.widget.type": "layout.select.widget.type",
+	"Next": "Next",
+	"layout.edit.btn": "layout.edit.btn",
+	"layout.edit.hide.btn": "layout.edit.hide.btn",
+	"not.found": "not.found",
+	"go.to": "go.to",
+	"home": "home",
+	"Login": "Login",
+	"Register": "Register"
+}

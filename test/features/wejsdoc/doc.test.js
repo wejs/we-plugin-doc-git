@@ -2,10 +2,8 @@ var assert = require('assert');
 var request = require('supertest');
 var helpers = require('we-test-tools').helpers;
 var stubs = require('we-test-tools').stubs;
-var async = require('async');
-var _ = require('lodash');
 var http;
-var we;
+var we, _ , async;
 var agent;
 
 describe('wejsdocsFeature', function() {
@@ -13,6 +11,8 @@ describe('wejsdocsFeature', function() {
     http = helpers.getHttp();
     agent = request.agent(http);
     we = helpers.getWe();
+    _ = we.utils._;
+    async = we.utils.async;
     we.config.acl.disabled = true;
     done();
   });

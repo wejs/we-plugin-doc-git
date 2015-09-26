@@ -1,5 +1,3 @@
-sudo: required
-
 language: node_js
 
 node_js:
@@ -8,14 +6,15 @@ node_js:
 services:
   - mysql
 
+addons:
+  apt:
+    packages:
+    - graphicsmagick
 env:
   NODE_ENV: 'test'
 
 before_script:
-  - sudo apt-get install graphicsmagick
   - mysql -e 'create database test;'
-  - npm install -g istanbul
-  - npm install -g mocha
 
 notifications:
   email:

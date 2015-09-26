@@ -1,7 +1,7 @@
 var assert = require('assert');
 var request = require('supertest');
 var helpers = require('we-test-tools').helpers;
-var stubs = require('we-test-tools').stubs;
+// var stubs = require('we-test-tools').stubs;
 var http;
 var we, _ , async;
 var agent;

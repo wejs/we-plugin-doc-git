@@ -8,27 +8,22 @@ module.exports = function weDocMenuWidget(projectPath, Widget) {
   };
 
   widget.formMiddleware = function formMiddleware(req, res, next) {
-    var we = req.getWe();
-    if (!we.config.doc || !we.config.doc.projects) {
+    if (!req.we.config.doc || !req.we.config.doc.projects) {
       res.locals.projects = {};
     } else {
-      res.locals.projects = we.config.doc.projects;
+      res.locals.projects = req.we.config.doc.projects;
     }
-
     next();
   }
 
   widget.viewMiddleware = function viewMiddleware(widget, req, res, next) {
-    var we = req.getWe();
-
     if (
       widget.configuration &&
       widget.configuration.projectName &&
-      we.doc.projects[widget.configuration.projectName]
+      req.we.doc.projects[widget.configuration.projectName]
     ) {
-      widget.menu = we.doc.projects[widget.configuration.projectName].JSONmenu;
+      widget.menu = req.we.doc.projects[widget.configuration.projectName].JSONmenu;
     }
-
     return next();
   }
 

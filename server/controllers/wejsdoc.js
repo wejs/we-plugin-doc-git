@@ -12,6 +12,8 @@ module.exports = {
       if (err) return res.serverError(err);
       if (!html) return res.notFound();
 
+      res.locals.pageConfig = pageConfig;
+
       if (res.locals.responseType === 'json')
         return res.send({
           title: pageConfig.title,

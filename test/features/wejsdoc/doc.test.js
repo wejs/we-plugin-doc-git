@@ -40,9 +40,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we/features.routes should return the feature route doc', function(done) {
+    it ('get /docs/we/request-response.routes should return the feature route doc', function(done) {
       request(http)
-      .get('/docs/we/features.routes')
+      .get('/docs/we/request-response.routes')
       .expect(200)
       .end(function (err, res) {
         if (err) throw err;
@@ -89,9 +89,9 @@ describe('wejsdocsFeature', function() {
       });
     });
 
-    it ('get /docs/we/features.routes should return the feature route doc', function(done) {
+    it ('get /docs/we/request-response.routes should return the feature route doc', function(done) {
       request(http)
-      .get('/docs/we/features.routes')
+      .get('/docs/we/request-response.routes')
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (err, res) {

@@ -55,7 +55,12 @@ module.exports = {
     var cfg = req.we.doc.projects[req.params.project].configs;
 
     req.we.doc
-    .load.bind({ we: req.we })(cfg, function() {
+    .load.bind({ we: req.we })(cfg, function(err) {
+      if (err) return res.serverError(err);
+
+      req.we.doc.loadProjectDocs(req.we, cfg);
+      req.we.doc.setNextAndPrevius(req.we, cfg);
+
       if (res.locals.redirectTo) {
         res.goTo(res.locals.redirectTo);
       } else {

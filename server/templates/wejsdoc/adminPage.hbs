@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{t 'name'}}</th>
+      <th>github</th>
+      <th>title</th>
+      <th>{{t 'actions'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each projects}}
+      <tr>
+        <td>{{@key}}</td>
+        <td>{{configs.gitRemote}}</td>
+        <td>{{title}}</td>
+        <td>
+          <form method="POST" action="/admin/git-doc/{{@key}}/reload">
+            <input type="hidden" name="redirectTo" value="{{../req.url}}">
+            <button class="btn btn-default btn-sm">{{t 'reload'}}</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

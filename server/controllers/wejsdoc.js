@@ -41,5 +41,26 @@ module.exports = {
     res.status(200).send({
       menu: we.doc.projects[req.params.project].JSONmenu
     })
+  },
+
+  adminPage: function(req, res) {
+    res.locals.projects = req.we.doc.projects;
+    res.ok();
+  },
+
+  reload: function(req, res) {
+    if (!req.we.doc.projects[req.params.project])
+      return res.notFound();
+
+    var cfg = req.we.doc.projects[req.params.project].configs;
+
+    req.we.doc
+    .load.bind({ we: req.we })(cfg, function() {
+      if (res.locals.redirectTo) {
+        res.goTo(res.locals.redirectTo);
+      } else {
+        res.ok();
+      }
+    });
   }
 };

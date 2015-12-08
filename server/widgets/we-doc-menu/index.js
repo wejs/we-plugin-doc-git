@@ -1,7 +1,7 @@
 module.exports = function weDocMenuWidget(projectPath, Widget) {
   var widget = new Widget('we-doc-menu', __dirname);
 
-  widget.afterSave = function afterSave(req, res, next) {
+  widget.beforeSave = function beforeSave(req, res, next) {
     if (!req.body.configuration) req.body.configuration = {};
     req.body.configuration.projectName = req.body.projectName;
     return next();

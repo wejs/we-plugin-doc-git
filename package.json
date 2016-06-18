@@ -1,38 +1,34 @@
 {
   "name": "we-plugin-doc-git",
   "description": "We.js plugin to show documentation with markdown and git",
-  "version": "1.0.0",
-  "main": "lib/index.js",
-  "scripts": {
-    "lint": "./node_modules/.bin/jshint .",
-    "test": "NODE_ENV=test LOG_LV=info ./node_modules/.bin/mocha test/bootstrap.js test/**/*.test.js",
-    "prepublish": "npm prune"
-  },
+  "version": "1.1.0",
+  "main": "plugin.js",
+  "scripts": {},
   "dependencies": {
-    "marked": "^0.3.5",
-    "we-plugin-menu": "^0.3.2"
+    "marked": "^0.3.5"
   },
   "devDependencies": {
     "fs-extra": "^0.24.0",
     "istanbul": "^0.3.14",
-    "jscs": "^1.4.5",
-    "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "rimraf": "^2.3.3",
     "sinon": "^1.14.1",
     "supertest": "^1.1.0",
-    "we-core": "^0.3.81",
-    "we-theme-admin-default": "^0.3.9",
-    "we-theme-site-wejs": "^0.3.23",
-    "we-test-tools": "^0.3.1"
+    "we-core": "wejs/we-core",
+    "we-plugin-menu": "wejs/we-plugin-menu",
+    "we-theme-admin-default": "wejs/we-theme-admin-default",
+    "we-theme-site-wejs": "wejs/we-theme-site-wejs",
+    "we-test-tools": "wejs/we-test-tools"
   },
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org"
-  },
-  "author": "Alberto Souza <alberto.souza.dev@gmail.com>",
+  "author": "Alberto Souza <contato@albertosouza.net>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:wejs/we-plugin-doc-git.git"
+  "repository": "wejs/we-plugin-doc-git",
+  "keywords": [
+    "wejs-plugin"
+  ],
+  "wejs": {
+    "dependencies": {
+      "we-plugin-menu": true
+    }
   }
 }

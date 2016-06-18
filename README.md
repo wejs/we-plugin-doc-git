@@ -1,7 +1,12 @@
 # We.js documentation plugin viewer
 
 [![Dependency Status](https://david-dm.org/wejs/we-plugin-doc-git.png)](https://david-dm.org/wejs/we-plugin-doc-git)
-[![Build Status](https://travis-ci.org/wejs/we-plugin-doc-git.svg?branch=0.3.x)](https://travis-ci.org/wejs/we-plugin-doc-git)
+
+## Installation
+
+```sh
+we i we-plugin-doc-git
+```
 
 ## Has suport to:
 

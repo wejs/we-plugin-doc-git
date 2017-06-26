@@ -1,7 +1,7 @@
 {
   "name": "we-plugin-doc-git",
   "description": "We.js plugin to show documentation with markdown and git",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "plugin.js",
   "scripts": {},
   "dependencies": {

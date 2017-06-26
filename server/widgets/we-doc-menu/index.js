@@ -1,8 +1,10 @@
 module.exports = function weDocMenuWidget(projectPath, Widget) {
-  var widget = new Widget('we-doc-menu', __dirname);
+  const widget = new Widget('we-doc-menu', __dirname);
 
   widget.beforeSave = function beforeSave(req, res, next) {
-    if (!req.body.configuration) req.body.configuration = {};
+    if (!req.body.configuration) {
+      req.body.configuration = {};
+    }
     req.body.configuration.projectName = req.body.projectName;
     return next();
   };
@@ -14,7 +16,7 @@ module.exports = function weDocMenuWidget(projectPath, Widget) {
       res.locals.projects = req.we.config.doc.projects;
     }
     next();
-  }
+  };
 
   widget.viewMiddleware = function viewMiddleware(widget, req, res, next) {
     if (
@@ -25,7 +27,7 @@ module.exports = function weDocMenuWidget(projectPath, Widget) {
       widget.menu = req.we.doc.projects[widget.configuration.projectName].JSONmenu;
     }
     return next();
-  }
+  };
 
   return widget;
 };

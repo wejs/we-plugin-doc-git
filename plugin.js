@@ -2,10 +2,10 @@
  * We.js we-plugin-doc-git plugin settings
  */
 
-var wejsdoc = require('./lib');
+const wejsdoc = require('./lib');
 
 module.exports = function loadPlugin(projectPath, Plugin) {
-  var plugin = new Plugin(__dirname);
+  const plugin = new Plugin(__dirname);
 
   // set plugin configs
   plugin.setConfigs({
@@ -68,12 +68,12 @@ module.exports = function loadPlugin(projectPath, Plugin) {
     }
   });
 
-  plugin.hooks.on('we:create:default:folders', function (we, done) {
+  plugin.hooks.on('we:create:default:folders', (we, done)=> {
     wejsdoc.initialize(we, done);
   });
 
-  plugin.hooks.on('we-plugin-menu:after:set:core:menus', function (data, done) {
-    var we = data.req.we;
+  plugin.hooks.on('we-plugin-menu:after:set:core:menus', (data, done)=> {
+    const we = data.req.we;
     // set admin menu
     if (data.res.locals.isAdmin) {
       data.res.locals.adminMenu.addLink({
